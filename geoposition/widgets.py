@@ -35,9 +35,9 @@ class GeopositionWidget(forms.MultiWidget):
         }
 
 
-    def get_context(self, name, value, attrs):
-        # Django 1.11 and up
-        context = super(GeopositionWidget, self).get_context(name, value, attrs)
+#     def get_context(self, name, value, attrs):
+#         # Django 1.11 and up
+#         context = super(GeopositionWidget, self).get_context(name, value, attrs)
 #         context['latitude'] = {
 #             'widget': context['widget']['subwidgets'][0],
 #             'label': _("latitude"),
@@ -46,8 +46,8 @@ class GeopositionWidget(forms.MultiWidget):
 #             'widget': context['widget']['subwidgets'][1],
 #             'label': _("longitude"),
 #         }
-        context['config'] = self.get_config()
-        return context
+#         context['config'] = self.get_config()
+#         return context
 
     def format_output(self, rendered_widgets):
         # Django 1.10 and down
