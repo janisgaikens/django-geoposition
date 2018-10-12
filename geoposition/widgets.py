@@ -11,7 +11,7 @@ from .conf import settings
 
 
 class GeopositionWidget(forms.MultiWidget):
-    template_name = 'geoposition/widgets/geoposition.html'
+#     template_name = 'geoposition/widgets/geoposition.html'
 
     def __init__(self, attrs=None):
         widgets = (
@@ -27,12 +27,12 @@ class GeopositionWidget(forms.MultiWidget):
             return [value.latitude, value.longitude]
         return [None, None]
 
-    def get_config(self):
-        return {
-            'map_widget_height': settings.MAP_WIDGET_HEIGHT or 500,
-            'map_options': json.dumps(settings.MAP_OPTIONS),
-            'marker_options': json.dumps(settings.MARKER_OPTIONS),
-        }
+#     def get_config(self):
+#         return {
+#             'map_widget_height': settings.MAP_WIDGET_HEIGHT or 500,
+#             'map_options': json.dumps(settings.MAP_OPTIONS),
+#             'marker_options': json.dumps(settings.MARKER_OPTIONS),
+#         }
 
 
 #     def get_context(self, name, value, attrs):
@@ -60,7 +60,11 @@ class GeopositionWidget(forms.MultiWidget):
                 'html': rendered_widgets[1],
                 'label': _("longitude"),
             },
-            'config': self.get_config(),
+            'config': {
+                'map_widget_height': settings.MAP_WIDGET_HEIGHT or 500,
+                'map_options': json.dumps(settings.MAP_OPTIONS),
+                'marker_options': json.dumps(settings.MARKER_OPTIONS),
+            }
         })
 
     class Media:
