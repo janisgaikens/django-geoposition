@@ -3,8 +3,9 @@
         <tr>
             <td>{{ latitude.label|capfirst }}</td>
             <td>
+                <div class="teststuff">{{ bool(latitude) }}</div>
                 {% if latitude.widget %}
-                <div class="teststuff">{{ latitude.widget.template_name }}</div>
+                
                     {% include latitude.widget.template_name with widget=latitude.widget %}
                 {% else %}
                     {{ latitude.html }}
