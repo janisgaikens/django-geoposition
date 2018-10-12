@@ -5,6 +5,7 @@
             <td>
                 {% if latitude.widget %}
                     {% include latitude.widget.template_name with widget=latitude.widget %}
+                    {{ latitude.html }}
                 {% else %}
                     {{ latitude.html }}
                 {% endif %}
@@ -15,6 +16,7 @@
             <td>
                 {% if longitude.widget %}
                     {% include longitude.widget.template_name with widget=longitude.widget %}
+                    {{ longitude.html }}
                 {% else %}
                     {{ longitude.html }}
                 {% endif %}
