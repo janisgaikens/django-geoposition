@@ -1,9 +1,10 @@
-<!-- <div class="geoposition-widget" data-map-widget-height="{{ config.map_widget_height }}" data-map-options="{{ config.map_options }}" data-marker-options="{{ config.marker_options }}">
+<div class="geoposition-widget" data-map-widget-height="{{ config.map_widget_height }}" data-map-options="{{ config.map_options }}" data-marker-options="{{ config.marker_options }}">
     <table>
         <tr>
             <td>{{ latitude.label|capfirst }}</td>
             <td>
                 {% if latitude.widget %}
+                <div class="teststuff">{{ latitude.widget.template_name }}</div>
                     {% include latitude.widget.template_name with widget=latitude.widget %}
                 {% else %}
                     {{ latitude.html }}
@@ -22,4 +23,4 @@
         </tr>
     </table>
 </div>
- -->
+
