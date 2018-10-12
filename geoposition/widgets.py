@@ -11,7 +11,7 @@ from .conf import settings
 
 
 class GeopositionWidget(forms.MultiWidget):
-    template_name = 'geoposition/widgets/geoposition.html'
+#     template_name = 'geoposition/widgets/geoposition.html'
 
     def __init__(self, attrs=None):
         widgets = (
