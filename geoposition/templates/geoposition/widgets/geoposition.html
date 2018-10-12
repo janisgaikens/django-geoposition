@@ -1,11 +1,10 @@
 <div class="geoposition-widget" data-map-widget-height="{{ config.map_widget_height }}" data-map-options="{{ config.map_options }}" data-marker-options="{{ config.marker_options }}">
-    <table>
+<!--     <table>
         <tr>
             <td>{{ latitude.label|capfirst }}</td>
             <td>
                 {% if latitude.widget %}
                     {% include latitude.widget.template_name with widget=latitude.widget %}
-                    {{ latitude.html }}
                 {% else %}
                     {{ latitude.html }}
                 {% endif %}
@@ -16,11 +15,13 @@
             <td>
                 {% if longitude.widget %}
                     {% include longitude.widget.template_name with widget=longitude.widget %}
-                    {{ longitude.html }}
                 {% else %}
                     {{ longitude.html }}
                 {% endif %}
             </td>
         </tr>
-    </table>
+    </table> -->
+    {% for subwidget in widget.subwidgets %}
+        {% include widget.template_name with widget=subwidget %}
+    {% endfor %}
 </div>
